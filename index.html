@@ -26,17 +26,26 @@
       background:radial-gradient(1200px 600px at 50% -10%,var(--bg2),var(--bg1));
       min-height:100%;
       display:flex;align-items:flex-start;justify-content:center;
-      padding:56px 20px 64px;
+      padding:64px 20px 64px;
       -webkit-font-smoothing:antialiased;
+    }
+    .urlbar{
+      position:fixed;top:0;left:0;right:0;z-index:10;
+      text-align:center;padding:13px 16px;
+      background:rgba(11,16,32,.78);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+      border-bottom:1px solid var(--line);
+      color:var(--accent);font-size:.95rem;font-weight:600;letter-spacing:.6px;
     }
     .wrap{width:100%;max-width:520px;text-align:center}
 
+    .tophead{display:flex;align-items:center;justify-content:center;gap:18px;margin-bottom:18px}
     .avatar{
-      width:112px;height:112px;border-radius:50%;
+      width:96px;height:96px;border-radius:50%;
       object-fit:cover;border:2px solid var(--line);
-      box-shadow:0 8px 30px rgba(0,0,0,.45);
-      margin:0 auto 18px;display:block;
+      box-shadow:0 8px 30px rgba(0,0,0,.45);display:block;
     }
+    .qr{width:96px;height:96px;background:#fff;border-radius:12px;padding:7px;box-shadow:0 8px 30px rgba(0,0,0,.45);display:block;flex:0 0 96px}
+    .qr img{width:100%;height:100%;display:block}
     h1{font-size:1.6rem;letter-spacing:.2px;margin-bottom:8px}
     .identity{color:var(--muted);font-size:.86rem;letter-spacing:.5px;margin-bottom:9px}
     .tag{color:var(--accent);font-size:.92rem;font-weight:600;letter-spacing:.4px;margin-bottom:10px}
@@ -55,6 +64,7 @@
     a.btn .ico{width:24px;height:24px;flex:0 0 24px;display:flex;align-items:center;justify-content:center}
     a.btn .ico svg{width:22px;height:22px;fill:currentColor}
     a.btn .label{flex:1;text-align:left}
+    a.btn .label .sub{display:block;color:var(--muted);font-size:.78rem;font-weight:500;margin-top:2px;letter-spacing:.2px}
     a.btn .chev{color:var(--muted);font-size:1.1rem}
 
     /* X profile card */
@@ -91,8 +101,12 @@
   </style>
 </head>
 <body>
+  <div class="urlbar">loringtonian.github.io/links</div>
   <main class="wrap">
-    <img class="avatar" src="avatar.jpg" alt="Lorin Symington" />
+    <div class="tophead">
+      <img class="avatar" src="avatar.jpg" alt="Lorin Symington" />
+      <a class="qr" href="https://loringtonian.github.io/links/" aria-label="QR code to this page"><img src="qr.png" alt="QR code linking to this page" /></a>
+    </div>
     <h1>Lorin Symington</h1>
     <div class="identity">Accelerationist | environmentalist | goodness enjoyer</div>
     <div class="tag">Building in Atoms, Bits, and Memes</div>
@@ -132,7 +146,7 @@ building from <span class="mention">@ns</span></div>
       <!-- LinkedIn -->
       <a class="btn" href="https://www.linkedin.com/in/lorin-symington/" target="_blank" rel="noopener">
         <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8h5v16H0V8zm7.5 0h4.78v2.19h.07c.67-1.2 2.3-2.46 4.73-2.46C22.4 7.73 24 10.1 24 14.4V24h-5v-8.4c0-2-.04-4.6-2.8-4.6-2.8 0-3.23 2.18-3.23 4.45V24h-5V8z"/></svg></span>
-        <span class="label">LinkedIn</span>
+        <span class="label">LinkedIn<span class="sub">linkedin.com/in/lorin-symington</span></span>
         <span class="chev">›</span>
       </a>
 
